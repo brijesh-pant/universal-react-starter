@@ -1,10 +1,10 @@
-import express from 'express';
+import express from 'express'
 
 import { render } from '../src/server'
 
-const app = express();
+const app = express()
 
-app.use(express.static('dist'));
+app.use(express.static('dist'))
 
 app.use(async (req, res) => {
   const { body } = await render()

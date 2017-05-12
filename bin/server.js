@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+/* eslint-disable no-console */
+
 require('babel-register')({
   presets: ['react', 'es2015-node5', 'stage-0'],
   plugins: ['add-module-exports']
@@ -7,8 +9,8 @@ require('babel-register')({
 
 const server = require('../server')
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
 server.listen(port, () => {
-  console.info(`Server is running! at http://localhost:${port}`);
+  console.info(`Server is running! at http://localhost:${ port }`)
 })

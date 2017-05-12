@@ -1,3 +1,4 @@
+/* eslint-disable react/no-deprecated */
 import React, { PropTypes } from 'react'
 
 const Html = props => {

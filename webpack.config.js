@@ -18,10 +18,10 @@ const config = {
         loader: 'babel-loader',
         query: {
           presets: ['react', [
-              'es2015',
-              {
-                  modules: false
-              }
+            'es2015',
+            {
+              modules: false
+            }
           ], 'stage-0']
         },
         include: path.join(__dirname, 'src')
