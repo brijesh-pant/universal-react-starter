@@ -2,10 +2,8 @@
 
 /* eslint-disable no-console */
 
-require('babel-register')({
-  presets: ['react', 'es2015-node5', 'stage-0'],
-  plugins: ['add-module-exports']
-})
+// Bootstrap babel-register
+require('../babel.server')
 
 const server = require('../server')
 
