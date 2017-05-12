@@ -3,3 +3,7 @@ node_js:
   - 6
 script:
   - npm run check
+# safelist
+branches:
+  only:
+  - develop
