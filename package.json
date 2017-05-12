@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node ./bin/server",
     "build": "webpack --progress",
+    "check": "npm run lint && npm run test",
+    "lint": "eslint .",
     "test": "NODE_ENV=test mocha mocha.config.js"
   },
   "repository": {
