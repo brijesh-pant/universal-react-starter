@@ -1,15 +1,21 @@
 const path = require('path')
+const webpack = require('webpack')
 
 const config = {
   entry: {
-    app: './src/client.js'
+    app: [
+      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
+      'react-hot-loader/patch',
+      './src/client.js'
+    ]
   },
   resolve: {
     extensions: ['.js']
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'app.js'
+    filename: 'app.js',
+    publicPath: '/'
   },
   module: {
     loaders: [
@@ -22,13 +28,19 @@ const config = {
             {
               modules: false
             }
-          ], 'stage-0']
+          ], 'stage-0'],
+          plugins: ['react-hot-loader/babel']
         },
         include: path.join(__dirname, 'src')
       }
     ]
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
+  plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
+  ]
 }
 
 module.exports = config
