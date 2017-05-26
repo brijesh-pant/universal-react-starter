@@ -3,7 +3,8 @@
   "description": "",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./bin/server",
+    "start": "NODE_ENV=production node ./bin/server",
+    "start-dev": "NODE_ENV=development node ./bin/server",
     "build": "webpack --progress",
     "check": "npm run lint && npm run test",
     "lint": "eslint .",
